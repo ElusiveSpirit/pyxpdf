@@ -69,7 +69,7 @@ def download_and_extract_libxpdf(destdir):
         for keep_file in os.listdir(destdir):
             if libname in keep_file and keep_file.endswith(".keep"):
                 os.remove(keep_file)
-        print("Downloading %s" % (libname))
+        print("Downloading %s" % (lib_url))
         dwd_req = urlopen(lib_url)
         unpack_zipfile(StringIO(dwd_req.read()), lib_dest_path)
         open(os.path.join(destdir, libname + lib_version + ".keep"), "w").close()
