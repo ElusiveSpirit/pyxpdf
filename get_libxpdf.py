@@ -52,7 +52,7 @@ def download_and_extract_libxpdf(destdir):
         filename.rsplit("/", 1)[1] for filename in filenames if release_path in filename
     ]
 
-    libname = "/download/v0.1.3/libxpdf-4.02.linux-gcc.x64.zip"
+    libname = "download/v0.1.3/libxpdf-4.02.linux-gcc.x64.zip"
 
     if not os.path.exists(destdir):
         os.makedirs(destdir)
