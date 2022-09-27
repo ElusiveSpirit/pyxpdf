@@ -52,17 +52,7 @@ def download_and_extract_libxpdf(destdir):
         filename.rsplit("/", 1)[1] for filename in filenames if release_path in filename
     ]
 
-    if platform.system() == "Windows":
-        arch = "win64" if is64() else "win32"
-        libname = [name for name in filenames if arch in name][0]
-    elif platform.system() == "Linux":
-        arch = "x64" if is64() else "x86"
-        libname = [name for name in filenames if "linux" in name and arch in name][0]
-    elif platform.system() == "Darwin":
-        arch = "x64" if is64() else "x86"
-        libname = [name for name in filenames if "macos" in name and arch in name][0]
-    else:
-        raise Exception("No Prebuit binary available for %s" % (platform.system()))
+    libname = "/download/v0.1.3/libxpdf-4.02.linux-gcc.x64.zip"
 
     if not os.path.exists(destdir):
         os.makedirs(destdir)
